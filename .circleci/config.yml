@@ -21,4 +21,5 @@ jobs:
           name: docker push
           command: |
             docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
-            mvn docker:build docker:push
+            docker build . -t mrflick72/configuration-server-k8s:latest
+            docker push mrflick72/configuration-server-k8s:latest
